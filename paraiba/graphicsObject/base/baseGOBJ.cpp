@@ -1,7 +1,6 @@
 #include "baseGOBJ.hpp"
 #include "../../glad/glad/glad.h"
 #include "paraiba/graphicsObject/vertex.hpp"
-#include <cstddef>
 
 void Paraiba::BasicGraphicsObject::addVertex(Vertex v) {
   vertices.push_back(v);
@@ -22,7 +21,10 @@ void Paraiba::BasicGraphicsObject::prepare() {
   // setup VAO
   glBindVertexArray(VAO);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+  glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_FALSE, sizeof(Vertex),
+                        (void *)(3 * sizeof(float)));
   glEnableVertexAttribArray(0);
+  glEnableVertexAttribArray(1);
 }
 
 void Paraiba::BasicGraphicsObject::draw() {

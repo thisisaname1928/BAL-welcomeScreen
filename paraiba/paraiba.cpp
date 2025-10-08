@@ -57,15 +57,27 @@ Paraiba::Paraiba::Paraiba(int width, int height, std::string title)
     obj.addVertex(
         {.x = static_cast<float>(1 * std::cos((angle / 180.0) * 3.14)),
          .y = static_cast<float>(1 * std::sin((angle / 180.0) * 3.14)),
-         .z = 0});
+         .z = 0,
+         .r = 255,
+         .g = 0,
+         .b = 0,
+         .a = 0});
     obj.addVertex(
         {.x = static_cast<float>(0 * std::cos((angle / 180.0) * 3.14)),
          .y = 0,
-         .z = 0});
+         .z = 0,
+         .r = 0,
+         .g = 255,
+         .b = 0,
+         .a = 0});
     obj.addVertex(
         {.x = static_cast<float>(1 * std::cos((angle / 180.0) * 3.14)),
          .y = 0,
-         .z = 0});
+         .z = 0,
+         .r = 0,
+         .g = 0,
+         .b = 255,
+         .a = 0});
     obj.prepare();
     obj.draw();
 
